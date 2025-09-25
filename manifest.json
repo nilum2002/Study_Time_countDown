@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Study Countdown Timer",
+  "version": "1.0",
+  "description": "A simple countdown timer to help you stay focused on study sessions.",
+  "action": {
+    "default_popup": "index.html"
+
+  },
+  "permissions": []
+}

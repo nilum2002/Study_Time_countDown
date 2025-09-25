@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" href="timer-svgrepo-com.svg" type="image/x-icon" /> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Study Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <h1>Set study duration</h1>
+        <div class="controls">
+            <div class="row">
+                <div style="flex:1">
+                    <label>Hours</label>
+                        <input id="hours" type="number" min="0" max="72" value="2" />
+                </div>
+        <div style="width:18px"></div>
+            <div style="flex:1">
+                <label>Minutes</label>
+                    <input id="minutes" type="number" min="0" max="59" value="0" />
+            </div>
+        </div>
+
+
+        <div class="row">
+            <button id="setBtn" class="btn">Set & Start</button>
+            <button id="pauseBtn" class="btn secondary">Pause</button>
+            <button id="resetBtn" class="btn secondary">Reset</button>
+        </div>
+
+
+        <div style="display:flex;gap:8px;align-items:center">
+            <input id="flipToggle" type="checkbox" /> <label for="flipToggle" style="margin:0">Show reverse side (click to flip)</label>
+        </div>
+
+
+        <div style="margin-top:6px;color:var(--muted);font-size:13px">Tip: set hours/minutes then click <strong>Set & Start</strong>. Use Pause/Reset as needed.</div>
+        </div>
+    </div>
+
+
+    <div class="card clock-area">
+        <div class="flip-card" id="flipCard">
+            <div class="flip-inner" id="flipInner">
+                <div class="face front">
+                    <svg class="progress-ring" viewBox="0 0 120 120" aria-hidden="true">
+                        <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,0.06)" stroke-width="15" fill="none" />
+                            <circle id="progressCircle" cx="60" cy="60" r="52" stroke="url(#grad)" stroke-width="15" fill="none" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="326.7256" stroke-dashoffset="0"></circle>
+                                <defs>
+                                    <linearGradient id="grad" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#7c3aed"/>
+                                    <stop offset="1" stop-color="#5b21b6"/>
+                                    </linearGradient>
+                                </def>
+                    </svg>
+                    <div class="time-large" id="timeDisplay">02:00:00</div>
+                    <div class="sub" id="statusText">Ready</div>
+                    </div>
+
+
+    <div class="face back">
+        <div style="text-align:center">
+            <div style="font-size:20px;font-weight:700">Reverse Side — Session Stats</div>
+                <div style="height:12px"></div>
+                    <div class="stat"><strong id="elapsedDisplay">00:00:00</strong><div style="color:var(--muted)">Elapsed</div></div>
+                        <div style="height:10px"></div>
+                            <div class="stat"><strong id="percentDisplay">0%</strong><div style="color:var(--muted)">Completed</div></div>
+                                <div style="height:10px"></div>
+                                    <div class="stat"><strong id="endTimeDisplay">-</strong><div style="color:var(--muted)">Ends at</div></div>
+                                        <footer>Click the card or toggle "Show reverse side" to flip.</footer>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <script src="script.js"></script>
+</body>
+</html>
